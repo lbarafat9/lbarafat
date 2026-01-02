@@ -1,63 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LB Arafat - Personal Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LB Arafat — Portfolio & Resume</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    body { margin:0; font-family:Arial, sans-serif; line-height:1.6; background:#f7f7f7; }
-    header { background:#333; color:#fff; padding:1rem; text-align:center; }
-    nav { background:#444; display:flex; justify-content:center; flex-wrap:wrap; }
-    nav a { color:#fff; padding:1rem; text-decoration:none; text-transform:uppercase; }
-    nav a:hover { background:#555; }
-    section { max-width:800px; margin:auto; background:#fff; padding:1.5rem; margin-top:1rem; border-radius:8px; }
-    footer { background:#333; color:#fff; text-align:center; padding:1rem; margin-top:2rem; }
-    @media(max-width:600px){ nav{flex-direction:column;} }
+    :root{
+      --yellow:#f7c948;
+      --dark:#1f1f1f;
+      --gray:#2a2a2a;
+      --light:#ffffff;
+    }
+
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Poppins',sans-serif;background:var(--dark);color:var(--light);}
+    a{text-decoration:none;color:inherit;}
+
+    .wrap{max-width:1100px;margin:auto;min-height:100vh;display:grid;grid-template-columns:360px 1fr;}
+
+    /* Sidebar */
+    .sidebar{
+      background:linear-gradient(180deg,var(--yellow),#f5b700);
+      padding:32px 26px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+    .avatar{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      overflow:hidden;
+      border:6px solid rgba(0,0,0,.2);
+      margin:auto;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;}
+    .name{font-size:28px;font-weight:700;text-align:center;color:#111;}
+    .role{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;text-align:center;color:#222;}
+    .bio{font-size:14px;line-height:1.7;text-align:center;color:#222;}
+
+    .info{display:grid;gap:10px;font-size:14px;color:#111;}
+    .info-item{display:flex;gap:8px;}
+    .label{min-width:110px;font-weight:600;}
+
+    .social{display:flex;justify-content:center;gap:12px;margin-top:10px;}
+    .social a{
+      width:36px;height:36px;display:grid;place-items:center;
+      border-radius:50%;background:#111;color:#fff;transition:.25s;
+    }
+    .social a:hover{transform:scale(1.1);background:#333;}
+
+    /* Content */
+    .content{background:linear-gradient(180deg,var(--gray),#151515);padding:40px 40px 120px;}
+    .card{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35);margin-bottom:18px;}
+    .section-title{color:var(--yellow);font-size:20px;margin-bottom:12px;}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .item{background:#121212;border:1px solid #242424;border-radius:12px;padding:16px;}
+    .item h4{margin:0 0 6px;}
+    .meta{font-size:13px;color:#aaa;margin-bottom:6px;}
+    .item p{font-size:14px;color:#cfcfcf;line-height:1.6;margin:0;}
+
+    /* Bottom Nav */
+    .nav{position:sticky;bottom:0;background:#0f0f0f;border-top:1px solid #222;display:grid;grid-template-columns:repeat(4,1fr);}
+    .nav a{padding:16px;text-align:center;font-weight:600;text-transform:uppercase;color:#ccc;transition:.25s;}
+    .nav a.active,.nav a:hover{color:var(--yellow);}
+
+    @media(max-width:980px){.wrap{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.content{padding-bottom:140px}}
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>LB Arafat</h1>
-    <p>Personal Profile Website</p>
-  </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div class="wrap">
 
-  <section id="home">
-    <h2>Home</h2>
-    <p>Welcome! I am LB Arafat. Here you will find my personal information and online profiles.</p>
-  </section>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
 
-  <section id="about">
-    <h2>About Me</h2>
-    <ul>
-      <li><strong>Name:</strong> LB Arafat</li>
-      <li><strong>Date of Birth:</strong> March 22, 2001 (actual), November 6, 2003 (registered)</li>
-      <li><strong>Religion:</strong> Muslim</li>
-      <li><strong>Weight:</strong> Fluctuates between 55–62 kg</li>
-      <li><strong>Village Address:</strong> Togorband Village, Togorband Union, Alfadanga Upazila, Faridpur District</li>
-      <li><strong>Birthplace:</strong> Gopalganj District</li>
-    </ul>
-  </section>
+    <div class="avatar">
+      <img src="profile.jpg" alt="LB Arafat">
+    </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me through the following platforms:</p>
-    <ul>
-      <li>💬 Telegram Channel: <a href="https://t.me/FusionScopeOfficials">FusionScopeOfficials</a></li>
-      <li>👩‍💻 Telegram (Sisters Only): <a href="https://t.me/FusionScopeOfficial">FusionScopeOfficial</a></li>
-      <li>📧 Email: <a href="mailto:lbarafat9@gmail.com">lbarafat9@gmail.com</a></li>
-      <li>📱 WhatsApp: <a href="https://wa.me/+8801674944985">+8801674944985</a></li>
-      <li>📘 Facebook: <a href="https://facebook.com/zindegi.uturn.10">facebook.com/zindegi.uturn.10</a></li>
-    </ul>
-  </section>
+    <div class="name">LB Arafat</div>
+    <div class="role">Web Designer • Graphic Designer • Microsoft Office Expert</div>
 
-  <footer>
-    <p>&copy; 2026 LB Arafat. All rights reserved.</p>
-  </footer>
+    <p class="bio">
+      Creative and hardworking professional with skills in web design,
+      graphic design, and Microsoft Office applications.
+      Focused on quality work, learning, and client satisfaction.
+    </p>
+
+    <div class="info">
+      <div class="info-item"><span class="label">DOB:</span>22 March 2001 (Actual)</div>
+      <div class="info-item"><span class="label">Registered:</span>6 November 2003</div>
+      <div class="info-item"><span class="label">Religion:</span>Muslim</div>
+      <div class="info-item"><span class="label">Weight:</span>55–62 kg</div>
+      <div class="info-item"><span class="label">Village:</span>Togorbond, Alfadanga, Faridpur</div>
+      <div class="info-item"><span class="label">Birthplace:</span>Gopalganj District</div>
+      <div class="info-item"><span class="label">Residence:</span>Dhaka, Bangladesh</div>
+
+      <div class="info-item"><span class="label">WhatsApp:</span><a href="https://wa.me/8801674944985">+8801674944985</a></div>
+      <div class="info-item"><span class="label">Email:</span><a href="mailto:lbarafat9@gmail.com">lbarafat9@gmail.com</a></div>
+      <div class="info-item"><span class="label">Facebook:</span><a href="https://facebook.com/zindegi.uturn.10">facebook.com/zindegi.uturn.10</a></div>
+      <div class="info-item"><span class="label">Telegram:</span><a href="https://t.me/FusionScopeOfficials">t.me/FusionScopeOfficials</a></div>
+      <div class="info-item"><span class="label">Freelance:</span>Available</div>
+    </div>
+
+    <div class="social">
+      <a href="https://facebook.com/zindegi.uturn.10"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/FusionScopeOfficials"><i class="fab fa-telegram"></i></a>
+      <a href="https://wa.me/8801674944985"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section class="card" id="about">
+      <h3 class="section-title">About Me</h3>
+      <p>
+        I am skilled in web design, graphic design, and Microsoft Office work.
+        I enjoy creating clean designs, managing documents, and learning new tools.
+        My goal is to grow professionally through freelancing and real projects.
+      </p>
+    </section>
+
+    <section class="card" id="resume">
+      <h3 class="section-title">Resume</h3>
+
+      <div class="grid-2">
+        <div class="item">
+          <h4>Education</h4>
+          <div class="meta">Higher Secondary Certificate (HSC)</div>
+          <p>Successfully completed HSC. Currently focusing on skill development and practical experience.</p>
+        </div>
+
+        <div class="item">
+          <h4>Professional Skills</h4>
+          <div class="meta">Design & Office</div>
+          <p>Web Design (HTML, CSS), Graphic Design, Microsoft Word, Excel, PowerPoint, data entry, formatting, and presentation design.</p>
+        </div>
+
+        <div class="item">
+          <h4>Experience</h4>
+          <div class="meta">Freelancing & Personal Work</div>
+          <p>Website creation, basic UI design, document handling, and client-based tasks.</p>
+        </div>
+
+        <div class="item">
+          <h4>Projects</h4>
+          <div class="meta">Personal & Demo Projects</div>
+          <p>Portfolio website, landing pages, office documents, and design samples.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="blog">
+      <h3 class="section-title">Blog</h3>
+      <p>This section will be used to share thoughts, learning experiences, and useful tips related to design, freelancing, and productivity.</p>
+    </section>
+
+    <section class="card" id="contact">
+      <h3 class="section-title">Contact</h3>
+      <p>Feel free to contact me through WhatsApp, email, Facebook, or Telegram anytime.</p>
+    </section>
+
+    <nav class="nav">
+      <a href="#about" class="active">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </main>
+
+</div>
+
+<script>
+  document.querySelectorAll('.nav a').forEach(link=>{
+    link.addEventListener('click',()=>{
+      document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
